@@ -29,7 +29,7 @@ for message in st.session_state.chat_history:
 #llm init
 llm = ChatOpenAI(
     model = "gpt-6.1-sol",
-   api_key=os.getenv("AVALAI_API_KEY"),
+   api_key=st.secrets.get("AVALAI_API_KEY") or os.getenv("AVALAI_API_KEY")
     base_url="https://api.avalai.ir/v1",
     temperature=0,
 
