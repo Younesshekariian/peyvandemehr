@@ -28,7 +28,7 @@ for message in st.session_state.chat_history:
 
 #llm init
 llm = ChatOpenAI(
-    model = "gpt-6.1-terra",
+    model = "gpt-6.1-sol",
    api_key="aa-GLD5ILSDEBNh8ARr35VpPu5P0YwpBWJUw89zgfK19ZB2DrSx",
     base_url="https://api.avalai.ir/v1",
     temperature=0,
@@ -52,7 +52,7 @@ prompt_template = ChatPromptTemplate.from_messages([
 ])   
 
 #user
-user_prompt =st.chat_input("Ask ChatBot...")
+user_prompt =st.chat_input("سوالی دارید بفرمایئد...")
 
 chain = prompt_template |llm
 
