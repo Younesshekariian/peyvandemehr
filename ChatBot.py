@@ -33,7 +33,7 @@ llm = ChatOpenAI(
 
 # input box
 user_prompt = st.chat_input("Ask Chatbot...")
-
+print(user_prompt)
 if user_prompt:
     st.chat_message("user").markdown(user_prompt)
     st.session_state.chat_history.append({"role": "user", "content": user_prompt})
