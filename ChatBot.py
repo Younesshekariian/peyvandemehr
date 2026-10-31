@@ -5,6 +5,9 @@ from langchain_core.prompts import ChatPromptTemplate , MessagesPlaceholder
 import os
 
 
+#load in variabels env
+load_dotenv()
+
 #streamlit page stup
 st.set_page_config(
     page_title= "دستیار پیوند مهر",
@@ -26,7 +29,7 @@ for message in st.session_state.chat_history:
 #llm init
 llm = ChatOpenAI(
     model = "gpt-6.1-terra",
-   
+   api_key= os.getenv("AVALAI_API_KEY"),
     base_url="https://api.avalai.ir/v1",
     temperature=0,
 
